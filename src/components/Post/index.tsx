@@ -47,7 +47,7 @@ const comments = [{
 ] as CommentProps[];
 
 
-export function Post({ author, avatarSrc, authorTitle, postContent }: PostProps) {
+export function Post({ author, avatarSrc, authorTitle }: PostProps) {
     return (
         <article className={styles.post}>
             <header>
