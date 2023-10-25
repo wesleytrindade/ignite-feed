@@ -2,6 +2,7 @@ interface PostProps {
     author: string;
     avatarSrc: string;
     authorTitle: string;
+    postContent: string;
 }
 
 import { Avatar } from '../Avatar';
@@ -46,12 +47,12 @@ const comments = [{
 ] as CommentProps[];
 
 
-export function Post({ author, avatarSrc, authorTitle }: PostProps) {
+export function Post({ author, avatarSrc, authorTitle, postContent }: PostProps) {
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.post__author}>
-                    <Avatar imgSrc={avatarSrc} withBorder={true}/>
+                    <Avatar imgSrc={avatarSrc} withBorder={true} />
                     <div className={styles.post__author__info}>
                         <strong>{author}</strong>
                         <span>{authorTitle}</span>
@@ -82,22 +83,22 @@ export function Post({ author, avatarSrc, authorTitle }: PostProps) {
             <div className={styles.commentList}>
 
                 {comments.map((comment, key) => {
-                    return(
+                    return (
                         <Comment
-                        key={key}
-                        author={comment.author}
-                        comment={comment.comment}
-                        time={comment.time}
-                        timeTitle={comment.timeTitle}
-                        timeDate={comment.timeDate}
-                        commentLikes={comment.commentLikes}
-                        likedButton={comment.likedButton}
-                        authorSrc={comment.authorSrc}
-                         />
+                            key={key}
+                            author={comment.author}
+                            comment={comment.comment}
+                            time={comment.time}
+                            timeTitle={comment.timeTitle}
+                            timeDate={comment.timeDate}
+                            commentLikes={comment.commentLikes}
+                            likedButton={comment.likedButton}
+                            authorSrc={comment.authorSrc}
+                        />
                     )
                 })}
-              </div>
-        </article>
+            </div>
+        </article >
 
     );
 }
